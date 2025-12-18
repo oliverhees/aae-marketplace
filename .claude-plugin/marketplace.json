@@ -1,0 +1,13 @@
+{
+  "name": "aae-marketplace",
+  "owner": {
+    "name": "AI Automation Engineers"
+  },
+  "plugins": [
+    {
+      "name": "saas-agency",
+      "source": "./saas-agency",
+      "description": "Complete AI agency with 38 specialized agents for autonomous SaaS development"
+    }
+  ]
+}

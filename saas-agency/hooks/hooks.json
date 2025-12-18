@@ -1,0 +1,47 @@
+{
+  "description": "SaaS Agency hooks for memory bank sync and checkpoints",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Die SaaS Agency ist aktiv. Nutze den memory-bank-protocol Skill und prüfe als erstes ob eine Memory Bank existiert. Wenn ja, lies sie. Wenn nein, informiere den User dass er mit /create-saas ein neues Projekt starten kann."
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Vor Dateiänderungen: Stelle sicher dass der aktuelle Fortschritt in der Memory Bank (progress.md) dokumentiert ist. Erstelle einen Checkpoint falls der letzte länger als 10 Minuten her ist."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Nach erfolgreicher Dateiänderung: Notiere die geänderte Datei für den nächsten Checkpoint in progress.md."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Bevor du stoppst: Erstelle einen finalen Checkpoint in der Memory Bank (progress.md) mit dem aktuellen Stand, offenen Tasks und wichtigen Infos für die nächste Session."
+          }
+        ]
+      }
+    ]
+  }
+}
