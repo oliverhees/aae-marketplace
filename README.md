@@ -24,7 +24,7 @@ Complete AI agency with **38 specialized agents** for autonomous SaaS developmen
 
 ```bash
 # Add marketplace
-/plugin marketplace add github:AI-Automation-Engineers/aae-marketplace
+/plugin marketplace add github:oliverhees/aae-marketplace
 
 # Install plugin
 /plugin install saas-agency@aae-marketplace
