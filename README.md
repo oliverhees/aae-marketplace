@@ -56,7 +56,7 @@ Stay tuned and join our community for updates!
 
 ```bash
 # Step 1: Add the marketplace
-/plugin marketplace add github:oliverhees/aae-marketplace
+/plugin marketplace add oliverhees/aae-marketplace
 
 # Step 2: Install the plugin
 /plugin install saas-agency@aae-marketplace
